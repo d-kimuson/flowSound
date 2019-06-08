@@ -1,0 +1,1 @@
+([('connect', '/Users/kaito/Apps/flowSound/src/dist/connect', 'EXECUTABLE')],)

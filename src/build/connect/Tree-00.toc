@@ -1,0 +1,12 @@
+('static/',
+ 'static/',
+ [],
+ 'DATA',
+ [('static/result.json', 'static/result.json', 'DATA'),
+  ('static/config.json', 'static/config.json', 'DATA'),
+  ('static/ui_files/guide.ui', 'static/ui_files/guide.ui', 'DATA'),
+  ('static/ui_files/test.ui', 'static/ui_files/test.ui', 'DATA'),
+  ('static/ui_files/result.ui', 'static/ui_files/result.ui', 'DATA'),
+  ('static/ui_files/menu.ui', 'static/ui_files/menu.ui', 'DATA'),
+  ('static/ui_files/settings.ui', 'static/ui_files/settings.ui', 'DATA'),
+  ('static/ui_files/fin.ui', 'static/ui_files/fin.ui', 'DATA')])
