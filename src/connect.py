@@ -1,7 +1,8 @@
-#!/usr/local/bin/python3
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
-import sys, os, json
+import sys
+import os
+import json
 
 
 def resource_path(relative):  # build用
@@ -108,7 +109,8 @@ def Back():
         changeView(now_view, bef)
         if now_view is dlgs["test"]:
             page_status[0] -= 1
-            dlgs["test"].page_num.setText(f"{page_status[0]-1}/{page_status[1]-1}")
+            dlgs["test"].page_num.setText(
+                f"{page_status[0]-1}/{page_status[1]-1}")
         now_view = bef
 
 
@@ -134,7 +136,7 @@ def SliderUpdate():
 
 
 def start_app():
-    global page_status, config
+    global page_status, config, now_view
     with open(config_path, "r") as file:
         config = json.load(file)
     page_status[1] = int(config["num_sounds"])
