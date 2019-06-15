@@ -1,8 +1,10 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
+import threading
 import sys
 import os
 import json
+import sound
 
 
 def resource_path(relative):  # build用
@@ -19,6 +21,7 @@ page_status = [0, 10]  # 現在のページ, 総ページ(テスト)
 history = []  # 画面遷移を履歴を記録していく
 now_view = None
 app = QtWidgets.QApplication([])
+P = None
 config = {
     "num_sounds": 10,
     "sounds": ["", ""],
@@ -40,10 +43,10 @@ def MessageBox(title, message):
 def changeView(bef_dlg, aft_dlg):
     pos = bef_dlg.pos()
     size = bef_dlg.size()
-    bef_dlg.hide()
     aft_dlg.move(pos.x(), pos.y())
     aft_dlg.resize(size)
     aft_dlg.show()
+    bef_dlg.hide()
 
 
 def GoGuide():
@@ -60,6 +63,7 @@ def GoGuide2Test():
     changeView(dlgs["guide"], dlgs["test"])
     page_status[0] += 1
     dlgs["test"].page_num.setText(f"{page_status[0]-1}/{page_status[1]-1}")
+    set_player()
 
 
 def GoTest2Test():
@@ -78,6 +82,7 @@ def GoTest2Test():
     else:
         changeView(dlgs["test"], dlgs["test"])
         dlgs["test"].page_num.setText(f"{page_status[0]-1}/{page_status[1]-1}")
+    set_player()
 
 
 def GoMenu():
@@ -111,6 +116,7 @@ def Back():
             page_status[0] -= 1
             dlgs["test"].page_num.setText(
                 f"{page_status[0]-1}/{page_status[1]-1}")
+            set_player()
         now_view = bef
 
 
@@ -132,7 +138,26 @@ def Apply():
 
 def SliderUpdate():
     value = dlgs["test"].speed_var.value()
-    dlgs["test"].speed_value.setText(f"{value2var(value)}")
+    value = value2var(value)
+    run_thread(P.setTask, args=["change_speed", float(value)])
+    dlgs["test"].speed_value.setText(f"{value}")
+
+def run_thread(func, args=[]):
+    # argsは def hoge(*args) しておく
+    thread = threading.Thread(target=func, args=args)
+    thread.start()
+
+
+def play():
+    run_thread(P.setTask, args=["play", ])
+
+
+def pause():
+    run_thread(P.setTask, args=["pause", ])
+
+
+def stop():
+    run_thread(P.setTask, args=["stop", ])
 
 
 def start_app():
@@ -144,6 +169,13 @@ def start_app():
     dlgs["menu"].show()
     now_view = dlgs["menu"]
     app.exec()
+
+
+def set_player():
+    global P
+    if P is not None:
+        P.done()
+    P = sound.Player()
 
 
 def exit_app():
@@ -169,9 +201,9 @@ def connect_objects():
     # test Objects
     dlgs["test"].backButtonT.clicked.connect(Back)
     dlgs["test"].nextButtonT.clicked.connect(GoTest2Test)
-    # dlgs["test"].startButton.clicked.connect()
-    # dlgs["test"].pauseButton.clicked.connect()
-    # dlgs["test"].stopButton.clicked.connect()
+    dlgs["test"].startButton.clicked.connect(play)
+    dlgs["test"].pauseButton.clicked.connect(pause)
+    dlgs["test"].stopButton.clicked.connect(stop)
     dlgs["test"].speed_value.setReadOnly(True)
     dlgs["test"].speed_var.sliderReleased.connect(SliderUpdate)
     dlgs["test"].speed_var.setValue(50)
