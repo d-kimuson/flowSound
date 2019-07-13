@@ -4,6 +4,7 @@
  'DATA',
  [('static/result.json', '../src/static/result.json', 'DATA'),
   ('static/config.json', '../src/static/config.json', 'DATA'),
+  ('static/strings.wav', '../src/static/strings.wav', 'DATA'),
   ('static/ui_files/guide.ui', '../src/static/ui_files/guide.ui', 'DATA'),
   ('static/ui_files/test.ui', '../src/static/ui_files/test.ui', 'DATA'),
   ('static/ui_files/result.ui', '../src/static/ui_files/result.ui', 'DATA'),

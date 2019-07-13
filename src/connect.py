@@ -73,14 +73,14 @@ def GoTest2Test():
     page_status[0] += 1
     if page_status[0] == page_status[1]:
         # 次で終了
-        changeView(dlgs["test"], dlgs["test"])
+        # changeView(dlgs["test"], dlgs["test"])
         dlgs["test"].page_num.setText(f"{page_status[0]-1}/{page_status[1]-1}")
         dlgs["test"].nextButtonT.setText("終了")
     elif page_status[0] > page_status[1]:
         changeView(dlgs["test"], dlgs["fin"])
         now_view = dlgs["fin"]
     else:
-        changeView(dlgs["test"], dlgs["test"])
+        # changeView(dlgs["test"], dlgs["test"])
         dlgs["test"].page_num.setText(f"{page_status[0]-1}/{page_status[1]-1}")
     set_player()
 
@@ -110,14 +110,18 @@ def GoSettings():
 def Back():
     global now_view, page_stauts
     if history != []:
-        bef = history.pop()
-        changeView(now_view, bef)
-        if now_view is dlgs["test"]:
+        if now_view is dlgs["test"] and page_status[0] != 1:
             page_status[0] -= 1
             dlgs["test"].page_num.setText(
-                f"{page_status[0]-1}/{page_status[1]-1}")
+                f"{page_status[0]-1}/{page_status[1]-1}"
+                )
             set_player()
-        now_view = bef
+        else:
+            if now_view is dlgs["test"]:
+                page_status[0] -= 1
+            bef = history.pop()
+            changeView(now_view, bef)
+            now_view = bef
 
 
 def Apply():
@@ -142,7 +146,9 @@ def SliderUpdate():
     run_thread(P.setTask, args=["change_speed", float(value)])
     dlgs["test"].speed_value.setText(f"{value}")
 
+
 def run_thread(func, args=[]):
+    # threadは1つまでにする❢
     # argsは def hoge(*args) しておく
     thread = threading.Thread(target=func, args=args)
     thread.start()
