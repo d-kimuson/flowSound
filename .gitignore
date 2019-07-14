@@ -1,9 +1,8 @@
 .DS_Store
-src/__pycache__/
-src/.DS_Store
-src/static/.DS_Store
-src/build/.DS_Store
-src/dist/.DS_Store
-src/static/images/.DS_Store
-src/static/ui_files/.DS_Store
+*/.DS_Store
+__pycache__/
+*/__pycache__/
+src/build/
+src/dist/profiles/
+src/dist/connect.exe
 sound_app/
