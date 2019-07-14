@@ -1,7 +1,6 @@
 import bug_fix
-from PyQt5 import QtCore
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem, QListWidget
+from PyQt5 import QtCore, QtWidgets, uic
+from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
 import threading
 import sys
 import os

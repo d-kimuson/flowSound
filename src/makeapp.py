@@ -1,6 +1,5 @@
 import os
 import shutil
-import zipfile
 
 
 bef_path = "C:/Users/kaito/Projects/flowSound/src/dist"
