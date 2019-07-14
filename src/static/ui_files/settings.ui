@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="backButtonS">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>20</y>
+     <x>670</x>
+     <y>30</y>
      <width>81</width>
      <height>32</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QLineEdit" name="NumFiles">
    <property name="geometry">
     <rect>
-     <x>132</x>
-     <y>30</y>
+     <x>190</x>
+     <y>50</y>
      <width>101</width>
      <height>21</height>
     </rect>
@@ -39,8 +39,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
+     <x>90</x>
+     <y>50</y>
      <width>91</width>
      <height>20</height>
     </rect>
@@ -52,24 +52,11 @@
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>256</width>
-     <height>192</height>
+     <x>40</x>
+     <y>100</y>
+     <width>711</width>
+     <height>451</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ApplyButton">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>適用</string>
    </property>
   </widget>
  </widget>

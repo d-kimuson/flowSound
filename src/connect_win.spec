@@ -21,9 +21,6 @@ a.datas += [('static/ui_files/fin.ui', './static/ui_files/fin.ui', 'DATA'),
             ('static/ui_files/result.ui', './static/ui_files/result.ui', 'DATA'),
             ('static/ui_files/settings.ui', './static/ui_files/settings.ui', 'DATA'),
             ('static/ui_files/test.ui', './static/ui_files/test.ui', 'DATA'),
-            ('static/config.json', './static/config.json', 'DATA'),
-            ('static/result.json', './static/result.json', 'DATA'),
-            ('static/strings.wav', './static/strings.wav', 'DATA'),
             ]
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)

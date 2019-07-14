@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>194</width>
-    <height>0</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="backButtonT">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>10</y>
+     <x>670</x>
+     <y>20</y>
      <width>81</width>
      <height>32</height>
     </rect>
@@ -29,9 +29,9 @@
   <widget class="QSlider" name="speed_var">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>160</y>
-     <width>271</width>
+     <x>80</x>
+     <y>370</y>
+     <width>491</width>
      <height>61</height>
     </rect>
    </property>
@@ -42,10 +42,10 @@
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>230</y>
-     <width>71</width>
-     <height>41</height>
+     <x>60</x>
+     <y>460</y>
+     <width>121</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
@@ -55,10 +55,10 @@
   <widget class="QPushButton" name="pauseButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>230</y>
-     <width>71</width>
-     <height>41</height>
+     <x>200</x>
+     <y>460</y>
+     <width>121</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
@@ -68,10 +68,10 @@
   <widget class="QPushButton" name="stopButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>230</y>
-     <width>71</width>
-     <height>41</height>
+     <x>340</x>
+     <y>460</y>
+     <width>141</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
@@ -81,10 +81,10 @@
   <widget class="QPushButton" name="nextButtonT">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>250</y>
-     <width>113</width>
-     <height>32</height>
+     <x>600</x>
+     <y>510</y>
+     <width>151</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -94,8 +94,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>140</y>
+     <x>110</x>
+     <y>340</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -107,10 +107,10 @@
   <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>261</width>
-     <height>81</height>
+     <x>40</x>
+     <y>60</y>
+     <width>601</width>
+     <height>221</height>
     </rect>
    </property>
    <property name="html">
@@ -124,8 +124,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>200</y>
+     <x>40</x>
+     <y>390</y>
      <width>31</width>
      <height>16</height>
     </rect>
@@ -137,8 +137,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>200</y>
+     <x>580</x>
+     <y>390</y>
      <width>31</width>
      <height>16</height>
     </rect>
@@ -150,8 +150,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QLineEdit" name="speed_value">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>180</y>
+     <x>190</x>
+     <y>340</y>
      <width>71</width>
      <height>21</height>
     </rect>
