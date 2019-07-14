@@ -17,7 +17,7 @@ def resource_path(relative):  # build用
 
 # アプリの用意
 ui_path = resource_path("static/ui_files")
-result_path = "result.json"
+result_path = f"{os.getcwd()}/{os.path.dirname(__file__)}/result.json"
 history = []  # 画面遷移を履歴を記録していく
 sounds = []  # パス
 result = {}
@@ -73,7 +73,10 @@ def GoGuide2Test():
 
 
 def GoTest2Test():
-    global now_view, result
+    global now_view, result, P
+    if P is not None:
+        pause()
+        P.done()
     value = value2var(
         dlgs["test"].speed_var.value()
     )
@@ -99,7 +102,7 @@ def GoTest2Test():
 
 
 def GoMenu():
-    global now_view, history, result
+    global now_view, history, result, P
     history = []
     config['now_page'] = 0
     now_view = dlgs["menu"]
@@ -132,6 +135,9 @@ def Back():
                 f"{config['now_page']}/{config['num_sounds']}"
                 )
             dlgs["test"].nextButtonT.setText("次へ")
+            if P is not None:
+                pause()
+                P.done()
             set_player()
         else:
             if now_view is dlgs["test"]:
@@ -178,9 +184,12 @@ def table_update():
             elif j == 0:
                 item = QTableWidgetItem(f"{i}")
             else:
-                item = QTableWidgetItem(
-                    result_integrated[keys[j-1]][i-1]
-                )
+                try:
+                    item = QTableWidgetItem(
+                        result_integrated[keys[j-1]][i-1]
+                        )
+                except Exceptin:
+                    pass
             dlgs['result'].ResultTable.setItem(i, j, item)
 
 
@@ -188,6 +197,7 @@ def run_thread(func, args=[]):
     # threadは1つまでにする❢
     # argsは def hoge(*args) しておく
     thread = threading.Thread(target=func, args=args)
+    thread.setDaemon(True)
     thread.start()
 
 
@@ -217,27 +227,30 @@ def start_app():
 def load_sounds():
     global config, sounds
     cwd = os.getcwd()
-    files = os.listdir(f"{cwd}/sounds")
+    files = os.listdir(f"{cwd}/{os.path.dirname(__file__)}/sounds")
     sounds = []
     for file in files:
         if ".wav" in file:
-            sounds.append(f"{cwd}/sounds/{file}")
+            sounds.append(f"{cwd}/{os.path.dirname(__file__)}/sounds/{file}")
             dlgs["settings"].listWidget.addItem(f"{file}")
     config["num_sounds"] = len(sounds) - 1
 
 
 def set_player():
     global P
-    if P is not None:
-        P.done()
-    print(sounds[config['now_page']])
+    # if P is not None:
+    #     stop()
+    #     P.done()
     P = sound.Player(
         path=sounds[config['now_page']]
         )
 
 
 def exit_app():
-    sys.exit(app.exec_())
+    global P
+    if P is not None:
+        P.done()
+    sys.exit()
 
 
 def value2var(value):
@@ -302,7 +315,6 @@ def connect_objects():
     # Result
     dlgs["result"].backButtonR.clicked.connect(Back)
     dlgs["result"].ResetButton.clicked.connect(ResetResults)
-    # dlgs["result"].Selector
 
     # Settings
     dlgs["settings"].backButtonS.clicked.connect(Back)

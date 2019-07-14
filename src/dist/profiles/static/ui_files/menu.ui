@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Menu</class>
+ <widget class="QDialog" name="Menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MENU</string>
+  </property>
+  <widget class="QPushButton" name="GoTestButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>60</y>
+     <width>480</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>テストを行う</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="GoResultButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>180</y>
+     <width>480</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>集計結果の確認</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="GoSettingsButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>300</y>
+     <width>480</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>設定</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ExitButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>420</y>
+     <width>480</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>終了</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

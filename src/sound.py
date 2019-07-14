@@ -2,12 +2,9 @@ from scipy import frombuffer, int16, array
 import pyaudio
 import wave
 
-# path = "/Users/kaito/Apps/flowSound/src/static/strings.wav"
-path = "C:/Users/kaito/Projects/flowSound/src/static/strings.wav"
-
 
 class Player:
-    def __init__(self, path=path):
+    def __init__(self, path):
         self.task = None
         self.path = path
         self.p = pyaudio.PyAudio()
