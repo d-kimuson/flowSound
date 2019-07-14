@@ -2,6 +2,12 @@
 
 聞き取りやすい音声スピードの調査システム.
 
+## アプリケーション化
+
+``` sh
+$
+```
+
 ## Usage
 
 - **flowSound/exe/dist/Prototype.app**
