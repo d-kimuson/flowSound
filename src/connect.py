@@ -1,3 +1,15 @@
+# import sys
+# sys.path = [
+#     # "C:\\Users\\kaito\\AppData\\Local\\Programs\\Python\\Python37-32\\python37.zip",
+#     "C:\\Users\\kaito\\AppData\\Local\\Programs\\Python\\Python37-32\\DLLs",
+#     "C:\\Users\\kaito\\AppData\\Local\\Programs\\Python\\Python37-32\\lib",
+#     # "C:\\Users\\kaito\\AppData\\Local\\Programs\\Python\\Python37-32",
+#     # "C:\\Users\\kaito\\AppData\\Roaming\\Python\\Python37\\site-packages",
+#     "C:\\Users\\kaito\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packages",
+#     ".\\"
+# ]
+import bug_fix
+from PyQt5 import QtCore
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
 import threading

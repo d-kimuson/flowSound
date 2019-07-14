@@ -4,7 +4,7 @@ import py2exe
 
 option = {
     'bundle_files': 1,
-    'compressed': True
+    'compressed': False
 }
 setup(
     options={'py2exe': option},
