@@ -188,7 +188,7 @@ def table_update():
                     item = QTableWidgetItem(
                         result_integrated[keys[j-1]][i-1]
                         )
-                except Exceptin:
+                except Exception:
                     pass
             dlgs['result'].ResultTable.setItem(i, j, item)
 
